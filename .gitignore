@@ -115,4 +115,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+*.img
 # End of https://www.gitignore.io/api/c,vim,linux,windows,assembler
