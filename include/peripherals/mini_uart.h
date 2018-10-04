@@ -17,4 +17,8 @@
 #define AUX_MU_STAT_REG (PBASE + 0x00215064)
 #define AUX_MU_BAUD_REG (PBASE + 0x00215068)
 
+#define BAUD_RATE    115200
+#define SYS_CLK_FREQ (250 * 1000000)
+#define BAUD_REG_VAL ((SYS_CLK_FREQ / BAUD_RATE) / 8) - 1
+
 #endif /* __P_MINI_UART_H */

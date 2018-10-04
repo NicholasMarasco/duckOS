@@ -119,10 +119,9 @@ void uart_init(void)
   put32(AUX_MU_LCR_REG, 3);
   // Set the RTS line to high which means something if caring about auto flow
   put32(AUX_MU_MCR_REG, 0);
-  // Set baud rate to 115200
-  // Calculated as system_clock_freq / (8 * (BAUD_REG + 1)
-  // system_clock_freq is 250 MHz, so math
-  put32(AUX_MU_BAUD_REG, 270);
+  // Set the mini UART baud rate counter
+  // Adjust BAUD_RATE in peripherals/mini_uart.h
+  put32(AUX_MU_BAUD_REG, BAUD_REG_VAL);
   // Turn on the bits to activate the transmiter and receiver
   put32(AUX_MU_CNTL_REG, 3);
 }
